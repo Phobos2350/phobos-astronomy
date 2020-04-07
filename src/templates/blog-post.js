@@ -14,29 +14,32 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div>
           <Helmet title={`${post.title} | ${siteTitle}`} />
+          
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
               alt={post.title}
-              fluid={post.heroImage.fluid}
+              fluid={post.image.fluid}
             />
           </div>
-          <div className="wrapper">
-            <h1 className="section-headline">{post.title}</h1>
-            <p
-              style={{
-                display: 'block',
-              }}
-            >
-              {post.publishDate}
-            </p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: post.body.childMarkdownRemark.html,
-              }}
-            />
+          <div className="pageBody">
+            <div className="wrapper">
+              <h1 className="section-headline">{post.title}</h1>
+              <p className="published"
+                style={{
+                  display: 'block',
+                }}
+              >
+                {post.publishDate}
+              </p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: post.body.childMarkdownRemark.html,
+                }}
+              />
+            </div>
           </div>
         </div>
       </Layout>
@@ -55,10 +58,10 @@ export const pageQuery = graphql`
     }
     contentfulBlogPost(slug: { eq: $slug }) {
       title
-      publishDate(formatString: "MMMM Do, YYYY")
-      heroImage {
-        fluid(maxWidth: 1180, background: "rgb:000000") {
-          ...GatsbyContentfulFluid_tracedSVG
+      publishDate(formatString: "Do MMMM, YYYY")
+      image {
+        fluid(maxWidth: 1180, background: "rgb:000000", quality: 100) {
+          ...GatsbyContentfulFluid_withWebp
         }
       }
       body {

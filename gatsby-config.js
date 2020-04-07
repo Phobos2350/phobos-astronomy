@@ -18,9 +18,9 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Phobos Astronomy',
   },
-  pathPrefix: '/gatsby-contentful-starter',
+  pathPrefix: '/phobos-astronomy',
   plugins: [
     'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
