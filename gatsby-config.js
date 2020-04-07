@@ -22,10 +22,23 @@ module.exports = {
   },
   pathPrefix: '/phobos-astronomy',
   plugins: [
-    'gatsby-transformer-remark',
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+        {
+          resolve: "gatsby-remark-external-links",
+          options: {
+            target: "_blank",
+            rel: "nofollow noopener noreferrer"
+          }
+        }
+        ]
+      }
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
