@@ -1,14 +1,19 @@
 .previewTitle {
   font-size: 1.5em;
+  margin-bottom: -0.25rem;
+}
+
+small {
+  font-style: italic;
 }
 
 .tag {
-  color: #252525;
+  color: #ffffffef;
   text-decoration: none;
   display: inline-block;
   padding: .33333rem .5rem;
   line-height: 1;
   border-radius: 2px;
-  border: 1px solid #252525;
+  border: 1px solid #ffffffef;
   margin-right: .5em;
 }

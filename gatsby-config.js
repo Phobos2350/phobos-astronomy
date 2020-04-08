@@ -26,17 +26,23 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-        {
-          resolve: "gatsby-remark-external-links",
+          {
+          resolve: `gatsby-remark-copy-linked-files`,
           options: {
-            target: "_blank",
-            rel: "nofollow noopener noreferrer"
+            ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+          },
+        },
+        {
+          resolve: 'gatsby-remark-external-links',
+          options: {
+            target: '_blank',
+            rel: 'nofollow noopener noreferrer'
           }
         }
-        ]
+        ],
       }
     },
     {

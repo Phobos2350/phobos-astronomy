@@ -1,6 +1,7 @@
 body {
   font-family: "Merriweather", Georgia, 'Times New Roman', Times, serif;
   font-size: 1em;
+  font-weight: 200;
   line-height: 1.65;
   color: #ffffffef;
   background: #252525;
@@ -16,9 +17,21 @@ h1,
 h2,
 h3 {
   font-family: "Lato", Arial, Helvetica, sans-serif;
-  font-size: 2em;
-  font-weight: normal;
+  font-weight: 800;
 }
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
 
 a {
   font-style: italic;
@@ -91,7 +104,8 @@ a:hover::before {
 .published {
   font-weight: 200;
   font-style: italic;
-  padding-bottom: 4vh;
+  margin-top: -2em;
+  padding-bottom: 2vh;
 }
 
 /**
