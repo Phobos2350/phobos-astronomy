@@ -33,12 +33,13 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1200,
+            }
           },
           {
           resolve: `gatsby-remark-copy-linked-files`,
           options: {
             ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
-          },
+          }
         },
         {
           resolve: 'gatsby-remark-external-links',
