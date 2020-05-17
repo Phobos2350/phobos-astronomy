@@ -93,6 +93,10 @@ a:hover::before {
   grid-gap: 5vmin;
 }
 
+.tags-list {
+  list-style: square; 
+}
+
 /**
  *
  */
@@ -119,4 +123,13 @@ a:hover::before {
 
 .list-inline li {
   display: inline-block;
+}
+
+.pageNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
 }

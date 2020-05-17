@@ -4,8 +4,10 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
+import kebabCase from "lodash/kebabCase"
 
 import heroStyles from '../components/hero.module.css'
+import styles from './blog-post.module.css'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -35,6 +37,12 @@ class BlogPostTemplate extends React.Component {
               >
                 {post.publishDate}
               </p>
+              {post.tags &&
+              post.tags.map(tag => (
+                <Link className={styles.tag} key={tag} to={`/tags/${kebabCase(tag)}/`}>
+                  {tag}
+                </Link>
+              ))}
               <div
                 dangerouslySetInnerHTML={{
                   __html: post.body.childMarkdownRemark.html,
@@ -84,6 +92,7 @@ export const pageQuery = graphql`
     contentfulBlogPost(slug: { eq: $slug }) {
       title
       publishDate(formatString: "Do MMMM, YYYY")
+      tags
       image {
         fluid(maxWidth: 1180, background: "rgb:000000", quality: 100) {
           ...GatsbyContentfulFluid_withWebp

@@ -1,11 +1,14 @@
 const Promise = require('bluebird')
 const path = require('path')
+const _ = require("lodash")
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
+  const blogPost = path.resolve('./src/templates/blog-post.js')
+  const tagPage = path.resolve("src/templates/tags.js")
+
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
     resolve(
       graphql(
         `
@@ -18,7 +21,13 @@ exports.createPages = ({ graphql, actions }) => {
                 node {
                   title
                   slug
+                  tags
                 }
+              }
+            }
+            tagsGroup: allContentfulBlogPost(limit: 1000) {
+              group(field: tags) {
+                fieldValue
               }
             }
           }
@@ -61,6 +70,19 @@ exports.createPages = ({ graphql, actions }) => {
             },
           })
         })
+
+        const tags = result.data.tagsGroup.group
+
+        tags.forEach(tag => {
+          createPage({
+            path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+            component: tagPage,
+            context: {
+              tag: tag.fieldValue,
+            },
+          })
+        })
+
       })
     )
   })

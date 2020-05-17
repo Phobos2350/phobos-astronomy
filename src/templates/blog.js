@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
+
+import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
@@ -35,16 +36,7 @@ class BlogIndex extends React.Component {
                   )
                 })}
               </ul>
-              <ul
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  listStyle: 'none',
-                  padding: 0,
-                }}
-              >
+              <ul className="pageNav">
                 {!isFirst && (
                   <Link to={prevPage} rel="prev">
                     ← Previous Page

@@ -1,10 +1,11 @@
-.hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  height: 12.5em;
-  background: #252525;
-  margin: -1em -2.5em 1em;
-  font-size: 2em
-}
+.tag {
+    color: #fcff38;
+    text-decoration: none;
+    display: inline-block;
+    padding: .33333rem .5rem;
+    line-height: 1;
+    border: 1px solid #fcff38;
+    margin-right: .5em;
+    margin-bottom: .5em;
+  }
+  
