@@ -31,6 +31,7 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
+          { resolve: 'gatsby-remark-autolink-headers' },
           {
             resolve: `gatsby-remark-images-contentful`,
             options: {
