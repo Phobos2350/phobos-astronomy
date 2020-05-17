@@ -19,12 +19,14 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Phobos Astronomy',
+    siteUrl: 'https://phobos-astronomy.netlify.app'
   },
   pathPrefix: '/phobos-astronomy',
   plugins: [
     'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -55,6 +57,15 @@ module.exports = {
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: process.env.GA_ID,
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+      }
     }
   ],
 }
