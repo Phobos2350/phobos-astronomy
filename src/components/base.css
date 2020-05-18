@@ -65,6 +65,10 @@ a:hover::before {
   transition: transform .25s ease-out;
 }
 
+.anchor.before {
+  visibility: hidden;
+}
+
 .pageBody {
   max-width: 75%;
   width: calc(100% - 10vmin);
