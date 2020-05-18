@@ -1,13 +1,9 @@
 .hero {
-  width: 100%;
+  height: 80%;
   position: relative;
   background: #252525;
   color: #ffffffef;
   text-align: center;
-}
-
-.heroImage {
-  max-height: 80%;
 }
 
 .heroDetails {
@@ -15,19 +11,23 @@
   left: 50%;
   top: 30%;
   transform: translate(-50%, 0);
-  font-size: 14px;
-  padding: 0 0.5em;
 }
 
-@media(min-width: 600px) {
+@media(min-width: 250px) {
   .heroDetails {
-    font-size: 2vh;
+    font-size: 3vh;
   }
 }
 
-@media(min-width: 1000px) {
+@media(min-width: 580px) {
   .heroDetails {
     font-size: 4vh;
+  }
+}
+
+@media(min-width: 780px) {
+  .heroDetails {
+    font-size: 5vh;
   }
 }
 
@@ -37,6 +37,6 @@
 
 .heroTitle {
   margin: 0;
-  font-size: 1.125em;
+  font-size: .85em;
   font-weight: bold;
 }

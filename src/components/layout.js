@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import base from './base.css'
-import Container from './container'
 import Navigation from './navigation'
 import Footer from './footer'
 
@@ -18,9 +16,7 @@ class Template extends React.Component {
     return (
       <React.Fragment>
         <Navigation />
-        <Container>
           {children}
-        </Container>
         <Footer />
       </React.Fragment>
     )
