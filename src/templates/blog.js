@@ -16,8 +16,11 @@ class BlogIndex extends React.Component {
 
     const isFirst = currentPage === 1
     const isLast = currentPage === numPages
-    const prevPage = currentPage - 1 === 1 ? "/blog#posts" : "/blog/" + (currentPage - 1).toString() + '#posts'
-    const nextPage = "/blog/" + (currentPage + 1).toString() + '#posts'
+    const prevPage =
+      currentPage - 1 === 1
+        ? '/blog#posts'
+        : '/blog/' + (currentPage - 1).toString() + '#posts'
+    const nextPage = '/blog/' + (currentPage + 1).toString() + '#posts'
 
     return (
       <Layout location={this.props.location}>
@@ -26,7 +29,9 @@ class BlogIndex extends React.Component {
           <Hero data={heroBanner.node} />
           <div className="pageBody">
             <div className="wrapper">
-              <h2 id="posts" className="section-headline">Posts</h2>
+              <h2 id="posts" className="section-headline">
+                Posts
+              </h2>
               <ul className="article-list">
                 {posts.map(({ node }) => {
                   return (
@@ -97,7 +102,12 @@ export const pageQuery = graphql`
           publishDate(formatString: "Do MMMM, YYYY")
           tags
           image {
-            fluid(maxWidth: 350, maxHeight: 196, quality: 100, resizingBehavior: SCALE) {
+            fluid(
+              maxWidth: 350
+              maxHeight: 196
+              quality: 100
+              resizingBehavior: SCALE
+            ) {
               ...GatsbyContentfulFluid_withWebp
             }
           }
@@ -109,9 +119,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPageHeader(
-      filter: { title: { eq: "Blog & Articles" } }
-    ) {
+    allContentfulPageHeader(filter: { title: { eq: "Blog & Articles" } }) {
       edges {
         node {
           title

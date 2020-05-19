@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 import styles from './article-preview.module.css'
 

@@ -16,7 +16,7 @@ class Template extends React.Component {
     return (
       <React.Fragment>
         <Navigation />
-          {children}
+        {children}
         <Footer />
       </React.Fragment>
     )

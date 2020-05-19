@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import get from 'lodash/get'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 
 import heroStyles from '../components/hero.module.css'
 import styles from './blog-post.module.css'
@@ -19,7 +19,7 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location}>
         <div>
           <Helmet title={`${post.title} | ${siteTitle}`} />
-          
+
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
@@ -30,7 +30,8 @@ class BlogPostTemplate extends React.Component {
           <div className="pageBody">
             <div className="wrapper">
               <h1 className="section-headline">{post.title}</h1>
-              <p className="published"
+              <p
+                className="published"
                 style={{
                   display: 'block',
                 }}
@@ -38,11 +39,15 @@ class BlogPostTemplate extends React.Component {
                 {post.publishDate}
               </p>
               {post.tags &&
-              post.tags.map(tag => (
-                <Link className={styles.tag} key={tag} to={`/tags/${kebabCase(tag)}/`}>
-                  {tag}
-                </Link>
-              ))}
+                post.tags.map(tag => (
+                  <Link
+                    className={styles.tag}
+                    key={tag}
+                    to={`/tags/${kebabCase(tag)}/`}
+                  >
+                    {tag}
+                  </Link>
+                ))}
               <div
                 dangerouslySetInnerHTML={{
                   __html: post.body.childMarkdownRemark.html,
