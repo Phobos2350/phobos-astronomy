@@ -69,6 +69,10 @@ a:hover::before {
   visibility: hidden;
 }
 
+a.gatsby-resp-image-link::before {
+  background-image: none;
+}
+
 .pageBody {
   max-width: 75%;
   width: calc(100% - 10vmin);
